@@ -1,51 +1,122 @@
 # AML Transaction Monitoring System
 
-> Graph-based Anti-Money Laundering detection engine built to address
-> the AML control failures seen across major UK banks in 2024–2025
-> (Barclays £43M FCA fine, 2025).
+> Graph-based Anti-Money Laundering detection engine inspired by real-world AML failures in global banking systems (e.g., Barclays FCA fine).
 
-## Problem
-Rule-based AML systems generate 95% false-positive alerts and miss
-network-level laundering schemes. This system uses graph analytics
-to detect money mule rings invisible to single-transaction analysis.
+---
 
-## Architecture
-Transaction Feed → Kafka → Feature Engineering
-→ Neo4j Graph → Louvain Community Detection
-→ PyTorch Autoencoder → Risk Scoring API
-→ React Dashboard with Sigma.js Graph Visualization
+## 🚨 Problem
 
-## Tech Stack (100% Free)
-| Layer      | Technology                   |
-|------------|------------------------------|
-| Streaming  | Apache Kafka (Docker)        |
-| Graph DB   | Neo4j Community Edition      |
-| ML Model   | PyTorch + scikit-learn       |
-| Backend    | FastAPI (Python)             |
-| Frontend   | React + Sigma.js             |
-| CI/CD      | GitHub Actions               |
-| Hosting    | Render.com + Vercel (free)   |
+Traditional AML systems:
 
-## Dataset
-PaySim: 6M synthetic mobile money transactions
-Source: kaggle.com/datasets/ealaxi/paysim1
+* Generate **90–95% false positives**
+* Fail to detect **coordinated laundering networks**
 
-## Quick Start
+This project solves that using:
+👉 **Graph analytics + Machine Learning**
+
+---
+
+## 🧠 Solution Overview
+
+* Detects **money mule networks**
+* Uses **transaction graph relationships**
+* Combines **unsupervised ML + anomaly detection**
+
+---
+
+## 🏗️ Architecture
+
+Transaction Stream
+→ Kafka
+→ Feature Engineering
+→ Neo4j Graph DB
+→ Community Detection (Louvain)
+→ Autoencoder (PyTorch)
+→ Risk Scoring API (FastAPI)
+→ Dashboard (React + Sigma.js)
+
+---
+
+## 🧰 Tech Stack
+
+| Layer      | Technology             |
+| ---------- | ---------------------- |
+| Streaming  | Apache Kafka           |
+| Graph DB   | Neo4j                  |
+| ML Model   | PyTorch, scikit-learn  |
+| Backend    | FastAPI                |
+| Frontend   | React + Sigma.js       |
+| Deployment | Docker, GitHub Actions |
+
+---
+
+## 📊 Dataset
+
+* **PaySim Dataset**
+* 6M synthetic transactions
+* Mimics real mobile money fraud patterns
+
+---
+
+## ⚡ Quick Start
+
+### 1. Clone Repo
+
 ```bash
-git clone git@github.com:YOUR_USERNAME/aml-transaction-monitor.git
+git clone https://github.com/YOUR_USERNAME/aml-transaction-monitor.git
 cd aml-transaction-monitor
-python -m venv venv && source venv/bin/activate
+```
+
+### 2. Setup Environment (Windows)
+
+```bash
+python -m venv venv
+venv\Scripts\activate
 pip install -r requirements.txt
+```
+
+### 3. Run Services
+
+```bash
 docker-compose up -d
 ```
 
-## Project Status
-- [ ] Phase 1: Data pipeline (Weeks 1–2)
-- [ ] Phase 2: ML model (Weeks 3–4)
-- [ ] Phase 3: Dashboard (Weeks 5–6)
-- [ ] Phase 4: Deployment (Weeks 7–10)
+---
 
-## Why I Built This
-Barclays was fined £43M by the FCA in 2025 for AML control failures.
-This project builds the continuous transaction monitoring system that
-financial crime compliance teams need to prevent exactly these failures.
+## 📈 Expected Outcomes
+
+* Detect hidden fraud rings
+* Reduce false positives
+* Improve AML compliance efficiency
+
+---
+
+## 🚀 Project Roadmap
+
+* [ ] Data Pipeline (Kafka + Processing)
+* [ ] Graph Construction (Neo4j)
+* [ ] ML Model (Fraud Detection)
+* [ ] API Development
+* [ ] Dashboard Visualization
+* [ ] Deployment
+
+---
+
+## 💼 Why This Project Matters
+
+Financial institutions lose billions due to weak AML systems.
+
+This project demonstrates:
+
+* Real-world fintech problem solving
+* Scalable system design
+* Data engineering + ML integration
+
+---
+
+## 👤 Author
+
+**Ratnali Pawar**
+B.Tech AI & Data Science
+
+---
